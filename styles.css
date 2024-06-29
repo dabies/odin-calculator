@@ -1,0 +1,75 @@
+body {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.container {
+    background-color: lightblue;
+    opacity: 80%;
+    height: 600px;
+    width: 300px;
+    border: 3px solid black;
+    border-radius: 20px;
+    box-shadow: 10px 5px 5px gray;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+}
+
+.display {
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    background-color: rgb(201, 190, 190);
+    opacity: 80%;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 100px;
+    width: 300px;
+    align-self: flex-start;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 55px;
+    font-size-adjust: 0.25;
+}
+
+.row {
+    display: flex;
+    border: 1px solid black;
+    justify-content: space-evenly;
+}
+
+button {
+    background-color: rgb(201, 190, 190);
+    border-radius: 50px;
+    height: 60px;
+    width: 60px;
+    font-size: large;
+}
+
+button.operator {
+    background-color: rgb(230, 39, 48);
+    font-size: xx-large;
+}
+
+.minus {
+    font-size: xx-large;
+}
+
+.zero, .clear {
+    flex-grow: 1;
+    max-width: 125px;
+}
+
+.division, .period {
+    font-size: xx-large;
+}
+
+p.logo {
+    border: 1px solid black;
+    align-self: center;
+    font-size: 25px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
