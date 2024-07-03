@@ -58,7 +58,11 @@ for (let i = 0; i < operatorBtns.length; i++) {
             secondNumber = Number(displayValue);
             console.log(secondNumber);
             let ans = operate(firstNumber, operator, secondNumber);
-            displayNow(`${ans}`);
+            if(Number.isInteger(ans)) {
+                displayNow(`${(ans).toFixed(0)}`);
+            } else {
+                displayNow(`${(ans).toFixed(4)}`);
+            }
             firstNumber = ans;
             secondNumber = 0;
             displayValue = '';
