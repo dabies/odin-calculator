@@ -47,10 +47,11 @@ button {
     height: 60px;
     width: 60px;
     font-size: large;
+    box-shadow: 3px 1px 1px gray;
 }
 
 button.operator {
-    background-color: rgb(230, 39, 48);
+    background-color: orangered;
     font-size: xx-large;
 }
 
@@ -68,7 +69,6 @@ button.operator {
 }
 
 p.logo {
-    border: 1px solid black;
     align-self: center;
     font-size: 25px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;

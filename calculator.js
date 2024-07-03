@@ -36,7 +36,6 @@ function displayNow(string) {
     displayValue = string;
 }
 
-
 let firstNumber = 0;
 let operator = undefined;
 let secondNumber = 0;
@@ -88,3 +87,14 @@ clear.addEventListener('click', function clearScreen() {
     secondNumber = 0;
     operator = undefined;
 });
+
+const undo = document.querySelector('.backspace');
+undo.addEventListener('click', () => {
+    let numbers = '0123456789';
+    let arr = displayValue.split('');
+    const cleanedArr = arr.filter((char) => numbers.includes(char));
+    cleanedArr.pop();
+    let newDisplay = cleanedArr.join('');
+    displayValue = newDisplay;
+    displayNow(displayValue);
+})
