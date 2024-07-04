@@ -54,6 +54,8 @@ for (let i = 0; i < operatorBtns.length; i++) {
             displayValue = '';
         } else if (operator === undefined) {
             operator = event.target.textContent;
+        } else if (displayValue === '') {
+            operator = event.target.textContent;
         } else {
             secondNumber = Number(displayValue);
             console.log(secondNumber);
@@ -61,7 +63,11 @@ for (let i = 0; i < operatorBtns.length; i++) {
             if(Number.isInteger(ans)) {
                 displayNow(`${(ans).toFixed(0)}`);
             } else {
-                displayNow(`${(ans).toFixed(4)}`);
+                if (typeof(ans) === 'string') {
+                    displayNow(ans);
+                } else {
+                    displayNow(`${(ans).toFixed(4)}`);
+                }
             }
             firstNumber = ans;
             secondNumber = 0;
@@ -94,11 +100,21 @@ clear.addEventListener('click', function clearScreen() {
 
 const undo = document.querySelector('.backspace');
 undo.addEventListener('click', () => {
-    let numbers = '0123456789';
+    let alphaNumeric = '.0123456789';
     let arr = displayValue.split('');
-    const cleanedArr = arr.filter((char) => numbers.includes(char));
+    const cleanedArr = arr.filter((char) => alphaNumeric.includes(char));
     cleanedArr.pop();
     let newDisplay = cleanedArr.join('');
     displayValue = newDisplay;
     displayNow(displayValue);
-})
+});
+
+const decimal = document.querySelector('.period');
+decimal.addEventListener('click', () => {
+    if (displayValue.includes('.')) {
+        displayValue = displayValue;
+    } else {
+        displayValue += decimal.textContent;
+        displayNow(displayValue);
+    }
+});
